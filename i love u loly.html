@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Love You Lara</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #4A90E2;
+            overflow: hidden;
+        }
+
+        .heart-container {
+            position: relative;
+            animation: pulse 2s ease-in-out infinite, float 3s ease-in-out infinite;
+        }
+
+        .heart {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .heart svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.2));
+        }
+
+        .message {
+            position: absolute;
+            z-index: 10;
+            color: black;
+            font-size: 36px;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            animation: sparkle 3s ease-in-out infinite;
+            opacity: 0;
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .sparkle:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+        .sparkle:nth-child(2) { top: 30%; left: 80%; animation-delay: 0.5s; }
+        .sparkle:nth-child(3) { top: 70%; left: 15%; animation-delay: 1s; }
+        .sparkle:nth-child(4) { top: 80%; left: 85%; animation-delay: 1.5s; }
+        .sparkle:nth-child(5) { top: 50%; left: 10%; animation-delay: 2s; }
+        .sparkle:nth-child(6) { top: 20%; left: 90%; animation-delay: 2.5s; }
+    </style>
+</head>
+<body>
+    <div class="heart-container">
+        <div class="heart">
+            <svg viewBox="0 0 32 29.6">
+                <path fill="white" d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+                c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+            </svg>
+            <div class="message">I Love You<br>Lara<br><span style="font-size: 24px; margin-top: 10px; display: inline-block;">From Jenna</span></div>
+        </div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+    </div>
+</body>
+</html>
